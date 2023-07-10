@@ -4,7 +4,7 @@ export const getMarkUpAllImages = images => {
       const getMarkUpImages = ` 
 
 <div class="photo-card">
-  <img src="" alt="" loading="lazy" />
+  <img src="${images}" alt="" loading="lazy" />
   <div class="info">
     <p class="info-item">
       <b>Likes</b>
