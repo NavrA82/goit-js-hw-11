@@ -1,28 +1,37 @@
 export const getMarkUpAllImages = images => {
   return images
-    .map(({ description, id, images, price, title }) => {
-      const getMarkUpImages = ` 
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => {
+        const getMarkUpImages = ` 
 
 <div class="photo-card">
-  <img src="${images}" alt="" loading="lazy" />
+  <img src="${largeImageURL}" alt="" loading="lazy" />
   <div class="info">
     <p class="info-item">
-      <b>Likes</b>
+      <b>Likes ${likes}</b>
     </p>
     <p class="info-item">
-      <b>Views</b>
+      <b>Views ${views}</b>
     </p>
     <p class="info-item">
-      <b>Comments</b>
+      <b>Comments ${comments}</b>
     </p>
     <p class="info-item">
-      <b>Downloads</b>
+      <b>Downloads ${downloads}</b>
     </p>
   </div>
 </div>
 `;
-
-      return getMarkUpImages;
-    })
+        return getMarkUpImages;
+      }
+    )
     .join('');
 };
