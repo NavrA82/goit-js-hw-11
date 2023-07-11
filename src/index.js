@@ -1,6 +1,6 @@
 import './styles/styles.css';
 
-import './styles/normalize.css';
+// import './styles/normalize.css';
 
 import SimpleLightbox from 'simplelightbox';
 
