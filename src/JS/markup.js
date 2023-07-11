@@ -13,7 +13,7 @@ export const getMarkUpAllImages = images => {
         const getMarkUpImages = ` 
 
 <div class="photo-card">
-  <img src="${largeImageURL}" alt="" loading="lazy" />
+  <img src="${largeImageURL}" alt= ${webformatURL}" loading="lazy" />
   <div class="info">
     <p class="info-item">
       <b>Likes ${likes}</b>
