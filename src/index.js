@@ -155,7 +155,7 @@ async function onLoadMoreBtnClick() {
       );
     }
   } catch (error) {
-    returnNotiflix.Report.warning(
+    return Notiflix.Report.warning(
       `THE MUSCOVITES BROKE IT ALL, Error is ${error.message}`,
       'Dont worry, Ukrainians will correct these mistakes',
       'OK',
