@@ -113,6 +113,10 @@ async function onFormBtnSubmitClick(event) {
       refs.gallery.insertAdjacentHTML('beforeend', getMarkUpAllImages(hits));
 
       lightbox.refresh();
+
+      return Notiflix.Notify.failure(
+        `We're sorry, but you've reached the end of search results.`
+      );
     }
 
     refs.gallery.insertAdjacentHTML('beforeend', getMarkUpAllImages(hits));
