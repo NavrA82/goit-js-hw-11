@@ -46,7 +46,7 @@ refs.form.addEventListener('submit', onFormBtnSubmitClick);
 
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 
-async function onSearchFormInput(event) {
+function onSearchFormInput(event) {
   if (!event.target.value.trim()) {
     return (refs.formBtnSubmit.disabled = true);
   } else if (event.target.value.trim().length > 0) {
@@ -111,6 +111,8 @@ async function onFormBtnSubmitClick(event) {
       Notiflix.Notify.success(`We found  ${totalHits} images.`);
 
       refs.gallery.insertAdjacentHTML('beforeend', getMarkUpAllImages(hits));
+
+      lightbox.refresh();
     }
 
     refs.gallery.insertAdjacentHTML('beforeend', getMarkUpAllImages(hits));
@@ -147,6 +149,8 @@ async function onLoadMoreBtnClick() {
     const response = await getApiImages(inpData, pageNumber, perPage);
     const { hits } = response.data;
     refs.gallery.insertAdjacentHTML('beforeend', getMarkUpAllImages(hits));
+
+    lightbox.refresh();
 
     if (perPageNumberGroup === pageNumber) {
       refs.loadMoreBtn.classList.add('is-hidden');
